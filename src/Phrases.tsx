@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import './App.css'
+import { v4 as uuid } from "uuid";
 import {Container, TextField, Typography, Button, Card, CardContent} from "@mui/material";
 import Grid from '@mui/material/Grid2';
 
@@ -15,7 +16,7 @@ const Phrases = () => {
 
     const addPhrase = () => {
         if (input.trim() !== "") {
-            setPhrases([...phrases, {id: Date.now(), text: input.trim()}]);
+            setPhrases([...phrases, {id: uuid(), text: input.trim()}]);
             setInput("");
         }
     };
